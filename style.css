@@ -916,7 +916,7 @@ transform: translateY(-5px);
    }
 
    .mobile-menu a:hover {
-      color: var (--orange);
+      color: var(--orange);
       background: #191919;
    }
 
