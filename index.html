@@ -30,11 +30,33 @@
             <a href="#contact">Contact</a>
         </nav>
 
+        <div class="header-right">
+
         <a href="tel:0650590567" class="header-phone">
             📞 Appeler
         </a>
 
+            <button class="menu-button"> onclick="toggleMenu()" aria-label="ouvrir le menu">
+                 ☰
+            </button>
+
+        </div>
+
     </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#accueil" onclick="closeMenu()">Accueil</a>
+
+        <a href="#services" onclick="closeMenu()">Services</a>
+
+        <a href="#location" onclick="closeMenu()">Location</a>
+
+        <a href="#avis" onclick="closeMenu()">Avis</a>
+
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+
+    </div>
 
 
     <!-- ================= ACCUEIL ================= -->
@@ -659,6 +681,17 @@
         </span>
     </a>
 
+        <script>
+
+            function toggleMenu() {
+                document.getElementById("mobileMenu").classList.toggle("open");
+            }
+
+            function closeMenu() {
+                document.getElementById("mobileMenu").classList.remove("open"):
+            }
+            
+        </script>
 
 </body>
 </html>
