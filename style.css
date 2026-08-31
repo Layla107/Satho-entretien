@@ -1254,6 +1254,6 @@ transform: translateY(-5px);
 ================================================== */
 
 .intro-logo {
-   backround: red;
+   backround: red !important;
 
 }
