@@ -1248,3 +1248,8 @@ transform: translateY(-5px);
     }
 
 }
+
+.intro-logo img {
+   backround: red !important;
+
+}
