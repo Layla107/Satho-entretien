@@ -1134,57 +1134,65 @@ transform: translateY(-5px);
 
 .intro-logo {
     position: fixed;
-
     inset: 0;
 
     z-index: 9999;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     background: #080808;
 
-    animation: introFadeOut 0.8s ease 1.7s forwards;
-
     pointer-events: none;
+
+    animation: introFadeOut 1s ease 2.2s forwards;
 }
 
-.intro-logo img {
-    width: min(420px, 75vw);
 
+/* LOGO */
+
+.intro-logo img {
+    width: min(520px, 82vw);
     height: auto;
 
     opacity: 0;
 
-    animation: logoAppear 1.2s ease forwards;
+    animation: logoAppear 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 
-/* Apparition du logo */
+/* APPARITION DU LOGO */
 
 @keyframes logoAppear {
 
     0% {
         opacity: 0;
-        transform: scale(0.85);
+        transform: scale(0.75);
+        filter: blur(8px);
+    }
+
+    60% {
+        opacity: 1;
+        filter: blur(0);
     }
 
     100% {
         opacity: 1;
         transform: scale(1);
+        filter: blur(0);
     }
 
 }
 
 
-/* Disparition de l'écran */
+/* DISPARITION DE L'ÉCRAN */
 
 @keyframes introFadeOut {
 
     0% {
         opacity: 1;
+        visibility: visible;
     }
 
     100% {
