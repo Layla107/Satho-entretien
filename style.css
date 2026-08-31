@@ -1127,3 +1127,69 @@ transform: translateY(-5px);
     }
 
 }
+
+/* ==================================================
+   INTRO LOGO
+================================================== */
+
+.intro-logo {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #080808;
+
+    animation: introFadeOut 0.8s ease 1.7s forwards;
+
+    pointer-events: none;
+}
+
+.intro-logo img {
+    width: min(420px, 75vw);
+
+    height: auto;
+
+    opacity: 0;
+
+    animation: logoAppear 1.2s ease forwards;
+}
+
+
+/* Apparition du logo */
+
+@keyframes logoAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* Disparition de l'écran */
+
+@keyframes introFadeOut {
+
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+}
