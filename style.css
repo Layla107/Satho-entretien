@@ -1253,8 +1253,7 @@ transform: translateY(-5px);
    FOND NOIR DU LOGO
 ================================================== */
 
-.intro-logo img,
-.logo-link img,
-.footer-logo img {
-    mix-blend-mode: screen;
+.intro-logo {
+   backround: red;
+
 }
