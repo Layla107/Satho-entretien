@@ -1249,3 +1249,36 @@ transform: translateY(-5px);
 
 }
 
+/* ==================================================
+   DIAPORAMA PHOTO ACCUEIL
+================================================== */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-slide {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 100%;
+    max-width: 500px;
+
+    opacity: 0;
+
+    transform: translateX(-50%);
+
+    transition: opacity 0.8s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+
+    position: relative;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
