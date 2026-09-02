@@ -2207,7 +2207,7 @@ a {
 
     .garage-slide {
         object-fit: cover;
-        transform: scale(1.08);
+        transform: scale(1.01);
     }
 
 }
