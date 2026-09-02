@@ -763,7 +763,8 @@
         
     </script>
 
-    <script>
+<script>
+
 const equipmentGrid = document.querySelector('.equipment-grid');
 const prevButton = document.querySelector('.carousel-prev');
 const nextButton = document.querySelector('.carousel-next');
@@ -771,23 +772,27 @@ const nextButton = document.querySelector('.carousel-next');
 if (equipmentGrid && prevButton && nextButton) {
 
     nextButton.addEventListener('click', () => {
+
         equipmentGrid.scrollBy({
             left: equipmentGrid.clientWidth,
             behavior: 'smooth'
         });
+
     });
 
     prevButton.addEventListener('click', () => {
+
         equipmentGrid.scrollBy({
             left: -equipmentGrid.clientWidth,
             behavior: 'smooth'
         });
+
     });
 
 }
 
-}
-</script>
+</script>    
+
 
 </body>
 </html>
