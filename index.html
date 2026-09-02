@@ -295,6 +295,9 @@
                 Découvrez notre matériel disponible à la location.
             </p>
 
+            <div class="equipment-carousel">
+                <button class="carousel-arrow carousel-prev" arial label="Machine précédente">←</button>
+            
             <div class="equipment-grid">
 
         <!-- TONDEUSE THERMIQUE -->
@@ -466,7 +469,12 @@
 
 </div>
 
+                <button class="carousel-arrow carousel-next" aria-label="Machine suivante">→</button>
+
+            </div>
+
         </section>
+                
         <!-- ================= BLOC REPARATION ================= -->
 
         <section class="repair">
@@ -754,6 +762,30 @@
         }, 4000);
         
     </script>
+
+    <script>
+const equipmentGrid = document.querySelector('.equipment-grid');
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
+
+if (equipmentGrid && prevButton && nextButton) {
+
+    nextButton.addEventListener('click', () => {
+        equipmentGrid.scrollBy({
+            left: equipmentGrid.clientWidth * 0.9,
+            behavior: 'smooth'
+        });
+    });
+
+    prevButton.addEventListener('click', () => {
+        equipmentGrid.scrollBy({
+            left: -equipmentGrid.clientWidth * 0.9,
+            behavior: 'smooth'
+        });
+    });
+
+}
+</script>
 
 </body>
 </html>
