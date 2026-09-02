@@ -772,17 +772,19 @@ if (equipmentGrid && prevButton && nextButton) {
 
     nextButton.addEventListener('click', () => {
         equipmentGrid.scrollBy({
-            left: equipmentGrid.clientWidth * 0.9,
+            left: equipmentGrid.clientWidth,
             behavior: 'smooth'
         });
     });
 
     prevButton.addEventListener('click', () => {
         equipmentGrid.scrollBy({
-            left: -equipmentGrid.clientWidth * 0.9,
+            left: -equipmentGrid.clientWidth,
             behavior: 'smooth'
         });
     });
+
+}
 
 }
 </script>
