@@ -1840,3 +1840,54 @@ transform: translateY(-5px);
         display: block;
     }
 }
+
+/* =========================================
+   BOUTONS GOOGLE
+========================================= */
+
+.google-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.google-review-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    color: white;
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.google-review-button:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
+@media (max-width: 700px) {
+
+    .google-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .google-button,
+    .google-review-button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
