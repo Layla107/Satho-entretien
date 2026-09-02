@@ -286,37 +286,57 @@
             </div>
 
 
-            <div class="realisations-gallery">
+           <div class="realisations-carousel">
 
-                <div class="realisation-card">
-                    <img
-                        src="reparation1.png"
-                        alt="Réparation réalisée par Satho Entretien"
-                    >
-                </div>
+    <button
+        type="button"
+        class="realisation-arrow realisation-prev"
+        aria-label="Réalisation précédente"
+    >
+        ←
+    </button>
 
-                <div class="realisation-card">
-                    <img
-                        src="reparation2.png"
-                        alt="Réparation réalisée par Satho Entretien"
-                    >
-                </div>
+    <div class="realisations-gallery" id="realisationsGallery">
 
-                <div class="realisation-card">
-                    <img
-                        src="reparation3.png"
-                        alt="Réparation réalisée par Satho Entretien"
-                    >
-                </div>
+        <div class="realisation-card">
+            <img
+                src="reparation1.png"
+                alt="Réparation réalisée par Satho Entretien"
+            >
+        </div>
 
-                <div class="realisation-card">
-                    <img
-                        src="reparation4.jpg"
-                        alt="Réparation réalisée par Satho Entretien"
-                    >
-                </div>
+        <div class="realisation-card">
+            <img
+                src="reparation2.png"
+                alt="Réparation réalisée par Satho Entretien"
+            >
+        </div>
 
-            </div>
+        <div class="realisation-card">
+            <img
+                src="reparation3.png"
+                alt="Réparation réalisée par Satho Entretien"
+            >
+        </div>
+
+        <div class="realisation-card">
+            <img
+                src="reparation4.jpg"
+                alt="Réparation réalisée par Satho Entretien"
+            >
+        </div>
+
+    </div>
+
+    <button
+        type="button"
+        class="realisation-arrow realisation-next"
+        aria-label="Réalisation suivante"
+    >
+        →
+    </button>
+
+</div>
 
         </section>
 
@@ -1201,6 +1221,79 @@ function scrollCarousel(direction) {
 
         }
 
+/* ---------- CARROUSEL RÉALISATIONS ---------- */
+
+const realisationsGallery =
+    document.getElementById("realisationsGallery");
+
+const realisationCards =
+    realisationsGallery
+        ? realisationsGallery.querySelectorAll(".realisation-card")
+        : [];
+
+const realisationPrev =
+    document.querySelector(".realisation-prev");
+
+const realisationNext =
+    document.querySelector(".realisation-next");
+
+
+if (
+    realisationsGallery &&
+    realisationCards.length > 1 &&
+    realisationPrev &&
+    realisationNext
+) {
+
+    let currentRealisation = 0;
+
+
+    function scrollRealisations(direction) {
+
+        currentRealisation += direction;
+
+
+        if (currentRealisation < 0) {
+
+            currentRealisation =
+                realisationCards.length - 1;
+
+        }
+
+
+        if (
+            currentRealisation >=
+            realisationCards.length
+        ) {
+
+            currentRealisation = 0;
+
+        }
+
+
+        realisationCards[currentRealisation]
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "center"
+            });
+
+    }
+
+
+    realisationPrev.addEventListener(
+        "click",
+        () => scrollRealisations(-1)
+    );
+
+
+    realisationNext.addEventListener(
+        "click",
+        () => scrollRealisations(1)
+    );
+
+}
+        
     </script>
 
 </body>
