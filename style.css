@@ -1808,6 +1808,62 @@ a {
 
     }
 
+   /* ---------- FLÈCHES RÉALISATIONS ---------- */
+
+.realisations-carousel {
+
+    position: relative;
+    width: 100%;
+
+}
+
+
+.realisation-arrow {
+
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    color: var(--white);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.4);
+
+}
+
+
+.realisation-prev {
+
+    left: 8px;
+
+}
+
+
+.realisation-next {
+
+    right: 8px;
+
+}
 
     /* ---------- RÉALISATIONS ---------- */
 
@@ -1828,6 +1884,8 @@ a {
 
         scrollbar-width:
             none;
+
+       scroll-behavior: smooth;
 
     }
 
@@ -2203,11 +2261,17 @@ a {
 }
 
 /* Zoom léger de la photo garage uniquement sur téléphone */
+
+/* Garage : conserver la photo entière sur téléphone */
+
 @media (max-width: 768px) {
 
     .garage-slide {
-        object-fit: cover;
-        transform: scale(1.01);
+
+        object-fit: contain;
+
+        transform: none;
+
     }
 
 }
