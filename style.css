@@ -1891,3 +1891,23 @@ transform: translateY(-5px);
     }
 
 }
+
+/* AFFICHAGE ENTIER DE L'AFFICHE */
+
+.hero-slide {
+    object-fit: contain !important;
+    background: #0b0b0b;
+}
+
+@media (max-width: 700px) {
+
+    .hero-image {
+        height: auto !important;
+        aspect-ratio: 16 / 10;
+    }
+
+    .hero-slide {
+        object-fit: contain !important;
+    }
+
+}
