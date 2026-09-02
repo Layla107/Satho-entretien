@@ -816,11 +816,9 @@ a {
 
     width: 100%;
     height: 100%;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.5s ease;
+    object-fit: contain;
+   padding: 10px;
+    transition: transform 0.5s ease;
 
 }
 
@@ -1997,6 +1995,13 @@ a {
             220px;
 
     }
+
+   .equipment-image img {
+
+      object-fit: contain;
+      padding: 10px;
+
+   }
 
 
     .carousel-arrow {
