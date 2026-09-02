@@ -2201,3 +2201,13 @@ a {
     }
 
 }
+
+/* Zoom léger de la photo garage uniquement sur téléphone */
+@media (max-width: 768px) {
+
+    .garage-slide {
+        object-fit: cover;
+        transform: scale(1.08);
+    }
+
+}
