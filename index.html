@@ -6,32 +6,35 @@
 
     <title>Satho Entretien | Motoculture à Sathonay-Camp</title>
 
-    <meta name="description"
-        content="Satho Entretien à Sathonay-Camp : réparation, entretien et location de matériel de motoculture toutes marques.">
+    <meta
+        name="description"
+        content="Satho Entretien à Sathonay-Camp : réparation, entretien et location de matériel de motoculture toutes marques."
+    >
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-
-
-    <!-- ================= INTRO LOGO =============== -->
+    <!-- ================= INTRO LOGO ================= -->
 
     <div class="intro-logo" id="introLogo">
         <img src="logo.png" alt="Satho Entretien">
     </div>
 
+
     <!-- ================= HEADER ================= -->
 
     <header class="header">
 
-        <a href="#" class="logo-link">
-            <img src="logo.png" alt="Satho Entretien - Spécialiste motoculture">
+        <a href="#accueil" class="logo-link">
+            <img
+                src="logo.png"
+                alt="Satho Entretien - Spécialiste motoculture"
+            >
         </a>
 
-        <nav class="navigation">
+        <nav class="navigation" aria-label="Navigation principale">
             <a href="#accueil">Accueil</a>
             <a href="#services">Services</a>
             <a href="#location">Location</a>
@@ -41,36 +44,44 @@
 
         <div class="header-right">
 
-        <a href="tel:0650590567" class="header-phone">
-            📞 Appeler
-        </a>
+            <a href="tel:0650590567" class="header-phone">
+                📞 Appeler
+            </a>
 
-            <button class="menu-button" onclick="toggleMenu()" aria-label="ouvrir le menu">
-                 ☰
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Ouvrir le menu"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+            >
+                ☰
             </button>
 
         </div>
 
     </header>
 
-    <div class="mobile-menu" id="mobileMenu">
 
-        <a href="#accueil" onclick="closeMenu()">Accueil</a>
+    <!-- ================= MENU MOBILE ================= -->
 
-        <a href="#services" onclick="closeMenu()">Services</a>
+    <nav
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Navigation mobile"
+    >
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#location">Location</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-        <a href="#location" onclick="closeMenu()">Location</a>
-
-        <a href="#avis" onclick="closeMenu()">Avis</a>
-
-        <a href="#contact" onclick="closeMenu()">Contact</a>
-
-    </div>
-
-
-    <!-- ================= ACCUEIL ================= -->
 
     <main>
+
+        <!-- ================= ACCUEIL ================= -->
 
         <section class="hero" id="accueil">
 
@@ -82,7 +93,7 @@
 
                 <h1>
                     Location, entretien<br>
-                    & réparation
+                    &amp; réparation
                 </h1>
 
                 <p class="hero-text">
@@ -93,14 +104,19 @@
 
                 <div class="hero-buttons">
 
-                    <a href="tel:0650590567" class="button button-orange">
+                    <a
+                        href="tel:0650590567"
+                        class="button button-orange"
+                    >
                         📞 Appeler maintenant
                     </a>
 
                     <a
                         href="https://www.google.com/maps/search/?api=1&query=Rue+du+Viaduc+69580+Sathonay-Camp"
                         target="_blank"
-                        class="button button-outline">
+                        rel="noopener noreferrer"
+                        class="button button-outline"
+                    >
                         📍 Nous trouver
                     </a>
 
@@ -108,22 +124,26 @@
 
             </div>
 
+
             <div class="hero-image">
 
                 <img
                     src="affiche.jpg.png"
                     alt="Satho Entretien"
-                    class="hero-slide active">
+                    class="hero-slide active"
+                >
 
                 <img
                     src="atelier.jpg"
                     alt="Atelier Satho Entretien"
-                    class="hero-slide">
+                    class="hero-slide"
+                >
 
                 <img
                     src="garage.jpg"
                     alt="Garage Satho Entretien"
-                    class="hero-slide">
+                    class="hero-slide"
+                >
 
             </div>
 
@@ -138,9 +158,7 @@
 
                 <p>NOTRE SAVOIR-FAIRE</p>
 
-                <h2>
-                    Nos services
-                </h2>
+                <h2>Nos services</h2>
 
                 <span></span>
 
@@ -151,13 +169,14 @@
 
                 <article class="service-card">
 
-                    <div class="service-icon">
+                    <div
+                        class="service-icon"
+                        aria-hidden="true"
+                    >
                         🔧
                     </div>
 
-                    <h3>
-                        Réparation
-                    </h3>
+                    <h3>Réparation</h3>
 
                     <p>
                         Réparation de matériel de motoculture
@@ -173,13 +192,14 @@
 
                 <article class="service-card">
 
-                    <div class="service-icon">
+                    <div
+                        class="service-icon"
+                        aria-hidden="true"
+                    >
                         ⚙️
                     </div>
 
-                    <h3>
-                        Entretien
-                    </h3>
+                    <h3>Entretien</h3>
 
                     <p>
                         Entretien et révision de vos équipements
@@ -195,13 +215,14 @@
 
                 <article class="service-card">
 
-                    <div class="service-icon">
+                    <div
+                        class="service-icon"
+                        aria-hidden="true"
+                    >
                         🚜
                     </div>
 
-                    <h3>
-                        Location
-                    </h3>
+                    <h3>Location</h3>
 
                     <p>
                         Location de matériel de motoculture
@@ -217,13 +238,14 @@
 
                 <article class="service-card">
 
-                    <div class="service-icon">
+                    <div
+                        class="service-icon"
+                        aria-hidden="true"
+                    >
                         💡
                     </div>
 
-                    <h3>
-                        Conseils
-                    </h3>
+                    <h3>Conseils</h3>
 
                     <p>
                         Besoin d'aide pour choisir ou utiliser
@@ -240,242 +262,492 @@
 
         </section>
 
-<!-- RÉALISATIONS -->
-<section class="section realisations" id="realisations">
 
-  <div class="section-title">
-    <p>NOTRE SAVOIR-FAIRE</p>
-    <h2>Nos réalisations</h2>
-    <span></span>
-    <p class="section-subtitle">
-      Découvrez quelques exemples de travaux réalisés par Satho Entretien.
-    </p>
-  </div>
+        <!-- ================= RÉALISATIONS ================= -->
 
-  <div class="realisations-gallery">
+        <section
+            class="section realisations"
+            id="realisations"
+        >
 
-    <div class="realisation-card">
-      <img src="reparation1.jpg" alt="Réparation réalisée par Satho Entretien">
-    </div>
+            <div class="section-title">
 
-    <div class="realisation-card">
-      <img src="reparation2.jpg" alt="Réparation réalisée par Satho Entretien">
-    </div>
+                <p>NOTRE SAVOIR-FAIRE</p>
 
-    <div class="realisation-card">
-      <img src="reparation3.jpg" alt="Réparation réalisée par Satho Entretien">
-    </div>
+                <h2>Nos réalisations</h2>
 
-    <div class="realisation-card">
-      <img src="reparation4.jpg" alt="Réparation réalisée par Satho Entretien">
-    </div>
+                <span></span>
 
-  </div>
+                <p class="section-subtitle">
+                    Découvrez quelques exemples de travaux
+                    réalisés par Satho Entretien.
+                </p>
 
-</section>
-        
+            </div>
+
+
+            <div class="realisations-gallery">
+
+                <div class="realisation-card">
+                    <img
+                        src="reparation1.jpg"
+                        alt="Réparation réalisée par Satho Entretien"
+                    >
+                </div>
+
+                <div class="realisation-card">
+                    <img
+                        src="reparation2.jpg"
+                        alt="Réparation réalisée par Satho Entretien"
+                    >
+                </div>
+
+                <div class="realisation-card">
+                    <img
+                        src="reparation3.jpg"
+                        alt="Réparation réalisée par Satho Entretien"
+                    >
+                </div>
+
+                <div class="realisation-card">
+                    <img
+                        src="reparation4.jpg"
+                        alt="Réparation réalisée par Satho Entretien"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+
         <!-- ================= LOCATION ================= -->
 
-        <section class="location section" id="location">
+        <section
+            class="section location"
+            id="location"
+        >
 
             <div class="section-title">
 
                 <p>MATÉRIEL DISPONIBLE</p>
 
-                <h2>
-                    Location
-                </h2>
+                <h2>Location</h2>
 
                 <span></span>
 
             </div>
+
 
             <p class="section-description">
                 Besoin de matériel pour vos travaux ponctuels ?
                 Découvrez notre matériel disponible à la location.
             </p>
 
+
             <div class="equipment-carousel">
-                <button class="carousel-arrow carousel-prev" aria-label="Machine précédente">←</button>
-            
-            <div class="equipment-grid">
 
-        <!-- TONDEUSE THERMIQUE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="tondeuse.jpg" alt="Tondeuse thermique en location">
-        </div>
-        <div class="equipment-content">
-            <span> LOCATION</span>
-            <h3> Tondeuse thermique</h3>
-            <p>Idéale pour l'entretien de votre pelouse.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-        </article>
+                <button
+                    type="button"
+                    class="carousel-arrow carousel-prev"
+                    aria-label="Machine précédente"
+                >
+                    ←
+                </button>
 
 
-            <!-- MOTOFAUCHEUSE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="motofaucheuse.jpg" alt="Motofaucheuse en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Motofaucheuse</h3>
-            <p>Pour faucher efficacement les herbes et végétations.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                <div
+                    class="equipment-grid"
+                    id="equipmentGrid"
+                >
+
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="tondeuse.jpg"
+                                alt="Tondeuse thermique en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Tondeuse thermique
+                            </h3>
+
+                            <p>
+                                Idéale pour l'entretien de votre pelouse.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- TARIÈRE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="tariere.jpg" alt="Tarière en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Tarière</h3>
-            <p>Pour réaliser facilement vos trous dans le sol.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="motofaucheuse.jpg"
+                                alt="Motofaucheuse en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Motofaucheuse
+                            </h3>
+
+                            <p>
+                                Pour faucher efficacement les herbes
+                                et végétations.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- PLAQUE VIBRANTE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="plaque-vibrante.jpg" alt="Plaque vibrante en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Plaque vibrante</h3>
-            <p>Pour compacter efficacement vos sols et surfaces.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="tariere.jpg"
+                                alt="Tarière en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Tarière
+                            </h3>
+
+                            <p>
+                                Pour réaliser facilement vos trous
+                                dans le sol.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- GROUPE ÉLECTROGÈNE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="groupe-electrogene.jpg" alt="Groupe électrogène en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Groupe électrogène</h3>
-            <p>Une solution pratique pour disposer d'électricité où vous en avez besoin.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="plaque-vibrante.jpg"
+                                alt="Plaque vibrante en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Plaque vibrante
+                            </h3>
+
+                            <p>
+                                Pour compacter efficacement vos sols
+                                et surfaces.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- SCARIFICATEUR -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="scarificateur.jpg" alt="Scarificateur en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Scarificateur</h3>
-            <p>Pour entretenir votre pelouse et éliminer le feutrage.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="groupe-electrogene.jpg"
+                                alt="Groupe électrogène en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Groupe électrogène
+                            </h3>
+
+                            <p>
+                                Une solution pratique pour disposer
+                                d'électricité où vous en avez besoin.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- TRONÇONNEUSE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="tronconneuse.jpg" alt="Tronçonneuse en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Tronçonneuse</h3>
-            <p>Pour vos travaux de coupe et d'entretien du bois.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="scarificateur.jpg"
+                                alt="Scarificateur en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Scarificateur
+                            </h3>
+
+                            <p>
+                                Pour entretenir votre pelouse
+                                et éliminer le feutrage.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- TAILLE-HAIE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="taille-haie.jpg" alt="Taille-haie en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Taille-haie</h3>
-            <p>Pour entretenir facilement vos haies et arbustes.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="tronconneuse.jpg"
+                                alt="Tronçonneuse en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Tronçonneuse
+                            </h3>
+
+                            <p>
+                                Pour vos travaux de coupe
+                                et d'entretien du bois.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- MOTOCULTEUR -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="motoculteur.jpg" alt="Motoculteur en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Motoculteur</h3>
-            <p>Pour préparer, travailler et entretenir vos sols.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="taille-haie.jpg"
+                                alt="Taille-haie en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Taille-haie
+                            </h3>
+
+                            <p>
+                                Pour entretenir facilement vos haies
+                                et arbustes.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- TONDEUSE DÉBROUSSAILLEUSE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="tondeuse-debroussailleuse.jpg" alt="Tondeuse débroussailleuse en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Tondeuse débroussailleuse</h3>
-            <p>Pour venir à bout des herbes hautes et terrains difficiles.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="motoculteur.jpg"
+                                alt="Motoculteur en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Motoculteur
+                            </h3>
+
+                            <p>
+                                Pour préparer, travailler et entretenir
+                                vos sols.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- DÉBROUSSAILLEUSE / COUPE-BORDURE -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="debroussailleuse.jpg" alt="Débroussailleuse et coupe-bordure en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Débroussailleuse / Coupe-bordure</h3>
-            <p>Pour les finitions et l'entretien des zones difficiles d'accès.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="tondeuse-debroussailleuse.jpg"
+                                alt="Tondeuse débroussailleuse en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Tondeuse débroussailleuse
+                            </h3>
+
+                            <p>
+                                Pour venir à bout des herbes hautes
+                                et terrains difficiles.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
 
 
-    <!-- NETTOYEUR HAUTE PRESSION -->
-    <article class="equipment-card">
-        <div class="equipment-image">
-            <img src="nettoyeur-haute-pression.jpg" alt="Nettoyeur haute pression en location">
-        </div>
-        <div class="equipment-content">
-            <span>LOCATION</span>
-            <h3>Nettoyeur haute pression</h3>
-            <p>Pour nettoyer efficacement vos surfaces extérieures.</p>
-            <a href="tel:0650590567">Demander un tarif →</a>
-        </div>
-    </article>
+                    <article class="equipment-card">
 
-</div>
+                        <div class="equipment-image">
+                            <img
+                                src="debroussailleuse.jpg"
+                                alt="Débroussailleuse et coupe-bordure en location"
+                            >
+                        </div>
 
-                <button class="carousel-arrow carousel-next" aria-label="Machine suivante">→</button>
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Débroussailleuse / Coupe-bordure
+                            </h3>
+
+                            <p>
+                                Pour les finitions et l'entretien
+                                des zones difficiles d'accès.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="equipment-card">
+
+                        <div class="equipment-image">
+                            <img
+                                src="nettoyeur-haute-pression.jpg"
+                                alt="Nettoyeur haute pression en location"
+                            >
+                        </div>
+
+                        <div class="equipment-content">
+
+                            <span>LOCATION</span>
+
+                            <h3>
+                                Nettoyeur haute pression
+                            </h3>
+
+                            <p>
+                                Pour nettoyer efficacement
+                                vos surfaces extérieures.
+                            </p>
+
+                            <a href="tel:0650590567">
+                                Demander un tarif →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="carousel-arrow carousel-next"
+                    aria-label="Machine suivante"
+                >
+                    →
+                </button>
 
             </div>
 
         </section>
-                
-        <!-- ================= BLOC REPARATION ================= -->
+
+
+        <!-- ================= RÉPARATION ================= -->
 
         <section class="repair">
 
@@ -495,7 +767,10 @@
                     toutes marques.
                 </p>
 
-                <a href="tel:0650590567" class="button button-orange">
+                <a
+                    href="tel:0650590567"
+                    class="button button-orange"
+                >
                     📞 Prendre contact
                 </a>
 
@@ -504,17 +779,18 @@
         </section>
 
 
-        <!-- ================= AVIS GOOGLE ================= -->
+        <!-- ================= AVIS ================= -->
 
-        <section class="section reviews" id="avis">
+        <section
+            class="section reviews"
+            id="avis"
+        >
 
             <div class="section-title">
 
                 <p>ILS NOUS FONT CONFIANCE</p>
 
-                <h2>
-                    Avis Google
-                </h2>
+                <h2>Avis Google</h2>
 
                 <span></span>
 
@@ -527,12 +803,15 @@
                     4,9
                 </div>
 
-                <div class="stars">
+                <div
+                    class="stars"
+                    aria-label="5 étoiles"
+                >
                     ★★★★★
                 </div>
 
                 <p>
-                    55 avis Google
+                    57 avis Google
                 </p>
 
             </div>
@@ -542,7 +821,10 @@
 
                 <article class="review-card">
 
-                    <div class="review-stars">
+                    <div
+                        class="review-stars"
+                        aria-label="5 étoiles"
+                    >
                         ★★★★★
                     </div>
 
@@ -560,7 +842,10 @@
 
                 <article class="review-card">
 
-                    <div class="review-stars">
+                    <div
+                        class="review-stars"
+                        aria-label="5 étoiles"
+                    >
                         ★★★★★
                     </div>
 
@@ -578,7 +863,10 @@
 
                 <article class="review-card">
 
-                    <div class="review-stars">
+                    <div
+                        class="review-stars"
+                        aria-label="5 étoiles"
+                    >
                         ★★★★★
                     </div>
 
@@ -598,36 +886,41 @@
 
             <div class="google-buttons">
 
-    <a
-        href="https://www.google.com/maps/search/?api=1&query=Satho+Entretien&query_place_id=ChIJT4KBdaCV9EcRxz0uHSHvYSo"
-        target="_blank"
-        class="google-button">
-        ⭐ Voir les avis Google
-    </a>
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Satho+Entretien&query_place_id=ChIJT4KBdaCV9EcRxz0uHSHvYSo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="google-button"
+                >
+                    ⭐ Voir les avis Google
+                </a>
 
-    <a
-        href="https://search.google.com/local/writereview?placeid=ChIJT4KBdaCV9EcRxz0uHSHvYSo"
-        target="_blank"
-        class="google-review-button">
-        ✍️ Laisser un avis
-    </a>
+                <a
+                    href="https://search.google.com/local/writereview?placeid=ChIJT4KBdaCV9EcRxz0uHSHvYSo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="google-review-button"
+                >
+                    ✍️ Laisser un avis
+                </a>
 
-</div>
+            </div>
 
         </section>
 
 
         <!-- ================= CONTACT ================= -->
 
-        <section class="contact section" id="contact">
+        <section
+            class="section contact"
+            id="contact"
+        >
 
             <div class="section-title">
 
                 <p>UNE QUESTION ?</p>
 
-                <h2>
-                    Contactez-nous
-                </h2>
+                <h2>Contactez-nous</h2>
 
                 <span></span>
 
@@ -640,11 +933,15 @@
 
                     <div class="contact-item">
 
-                        <div class="contact-icon">
+                        <div
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
                             📍
                         </div>
 
                         <div>
+
                             <h3>
                                 Adresse
                             </h3>
@@ -653,6 +950,7 @@
                                 Rue du Viaduc<br>
                                 69580 Sathonay-Camp
                             </p>
+
                         </div>
 
                     </div>
@@ -660,11 +958,15 @@
 
                     <div class="contact-item">
 
-                        <div class="contact-icon">
+                        <div
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
                             📞
                         </div>
 
                         <div>
+
                             <h3>
                                 Téléphone
                             </h3>
@@ -672,6 +974,7 @@
                             <a href="tel:0650590567">
                                 06 50 59 05 67
                             </a>
+
                         </div>
 
                     </div>
@@ -679,11 +982,15 @@
 
                     <div class="contact-item">
 
-                        <div class="contact-icon">
+                        <div
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
                             🕐
                         </div>
 
                         <div>
+
                             <h3>
                                 Rendez-vous
                             </h3>
@@ -703,9 +1010,10 @@
 
                     <iframe
                         src="https://www.google.com/maps?q=Rue%20du%20Viaduc%2069580%20Sathonay-Camp&output=embed"
+                        title="Localisation de Satho Entretien à Sathonay-Camp"
                         loading="lazy"
-                        allowfullscreen>
-                    </iframe>
+                        allowfullscreen
+                    ></iframe>
 
                 </div>
 
@@ -724,7 +1032,8 @@
 
             <img
                 src="logo.png"
-                alt="Satho Entretien">
+                alt="Satho Entretien"
+            >
 
         </div>
 
@@ -741,69 +1050,158 @@
 
     <!-- ================= BOUTON MOBILE ================= -->
 
-    <a href="tel:0650590567" class="mobile-call">
+    <a
+        href="tel:0650590567"
+        class="mobile-call"
+    >
         📞
         <span>
             Appeler Satho Entretien
         </span>
     </a>
 
-        <script>
 
-            function toggleMenu() {
-                document.getElementById("mobileMenu").classList.toggle("open");
-            }
-
-            function closeMenu() {
-                document.getElementById("mobileMenu").classList.remove("open");
-            }
-            
-        </script>
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script>
 
-        const slides = document.querySelectorAll(".hero-slide");
+        /* ---------- MENU MOBILE ---------- */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+
+        function closeMenu() {
+
+            mobileMenu.classList.remove("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+
+        menuButton.addEventListener(
+            "click",
+            () => {
+
+                const isOpen =
+                    mobileMenu.classList.toggle("open");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+            }
+        );
+
+
+        mobileMenu
+            .querySelectorAll("a")
+            .forEach((link) => {
+
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+
+            });
+
+
+        /* ---------- DIAPORAMA HERO ---------- */
+
+        const slides =
+            document.querySelectorAll(".hero-slide");
+
         let currentSlide = 0;
-        setInterval(() => {
-            
-            slides[currentSlide].classList.remove("active");
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add("active");
 
-        }, 4000);
-        
-    </script>
 
-<script>
+        if (slides.length > 1) {
 
-const equipmentGrid = document.querySelector('.equipment-grid');
-const prevButton = document.querySelector('.carousel-prev');
-const nextButton = document.querySelector('.carousel-next');
+            setInterval(() => {
 
-if (equipmentGrid && prevButton && nextButton) {
+                slides[currentSlide]
+                    .classList.remove("active");
 
-    nextButton.addEventListener('click', () => {
+                currentSlide =
+                    (currentSlide + 1) % slides.length;
 
-        equipmentGrid.scrollBy({
-            left: equipmentGrid.clientWidth,
-            behavior: 'smooth'
-        });
+                slides[currentSlide]
+                    .classList.add("active");
 
-    });
+            }, 4000);
 
-    prevButton.addEventListener('click', () => {
+        }
 
-        equipmentGrid.scrollBy({
-            left: -equipmentGrid.clientWidth,
-            behavior: 'smooth'
-        });
+
+        /* ---------- CARROUSEL LOCATION ---------- */
+
+        const equipmentGrid =
+            document.getElementById("equipmentGrid");
+
+        const prevButton =
+            document.querySelector(".carousel-prev");
+
+        const nextButton =
+            document.querySelector(".carousel-next");
+
+
+        if (
+            equipmentGrid &&
+            prevButton &&
+            nextButton
+        ) {
+
+            let currentEquipment = 0;
+
+const equipmentCards =
+    equipmentGrid.querySelectorAll(".equipment-card");
+
+function scrollCarousel(direction) {
+
+    currentEquipment += direction;
+
+    if (currentEquipment < 0) {
+        currentEquipment = 0;
+    }
+
+    if (currentEquipment >= equipmentCards.length) {
+        currentEquipment = equipmentCards.length - 1;
+    }
+
+    equipmentGrid.scrollTo({
+
+        left:
+            currentEquipment *
+            equipmentGrid.clientWidth,
+
+        behavior: "smooth"
 
     });
 
 }
 
-</script>    
 
+            nextButton.addEventListener(
+                "click",
+                () => scrollCarousel(1)
+            );
+
+
+            prevButton.addEventListener(
+                "click",
+                () => scrollCarousel(-1)
+            );
+
+        }
+
+    </script>
 
 </body>
 </html>
