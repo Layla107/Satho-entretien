@@ -1768,3 +1768,75 @@ transform: translateY(-5px);
     }
 
 }
+
+/* =========================================
+   CARROUSEL LOCATION - MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .equipment-carousel {
+        position: relative;
+        width: 100%;
+    }
+
+    .equipment-grid {
+        display: flex;
+        overflow: hidden;
+        gap: 0;
+        padding: 0;
+        scroll-snap-type: none;
+        width: 100%;
+    }
+
+    .equipment-card {
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 100%;
+        scroll-snap-align: start;
+    }
+
+    .carousel-arrow {
+        display: flex;
+        position: absolute;
+
+        top: 105px;
+
+        width: 42px;
+        height: 42px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 50%;
+
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+
+        font-size: 22px;
+
+        z-index: 10;
+    }
+
+    .carousel-prev {
+        left: 8px;
+    }
+
+    .carousel-next {
+        right: 8px;
+    }
+
+    .equipment-image {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .equipment-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
