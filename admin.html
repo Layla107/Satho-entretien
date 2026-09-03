@@ -948,7 +948,7 @@
                                 description: description,
 
                                 photos:
-                                    JSON.stringify(photosUrls)
+                                    JSON.stringify(photoUrls)
 
                             });
 
@@ -1263,7 +1263,7 @@
                     } =
                         await supabaseClient
                             .storage
-                            .from("vente")
+                            .from("ventes")
                             .remove(
                                 paths
                             );
