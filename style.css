@@ -2303,3 +2303,157 @@ a {
     }
 
 }
+
+/* ================= VENTES ================= */
+
+.sales-section {
+    padding: 90px 5%;
+    background: #0b0b0b;
+}
+
+.sales-public-list {
+    width: min(1100px, 100%);
+    margin: 45px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.sales-loading {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    color: #999;
+}
+
+
+/* ---------- CARTE VENTE ---------- */
+
+.public-sale-card {
+    overflow: hidden;
+
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 8px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.public-sale-card:hover {
+    transform: translateY(-4px);
+    border-color: #ff7000;
+}
+
+
+/* ---------- PHOTOS ---------- */
+
+.public-sale-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 2px;
+
+    background: #000;
+}
+
+.public-sale-gallery img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ---------- CONTENU ---------- */
+
+.public-sale-content {
+    padding: 22px;
+}
+
+.public-sale-content h3 {
+    margin-bottom: 10px;
+
+    font-size: 21px;
+    color: #fff;
+}
+
+.public-sale-content p {
+    color: #aaa;
+    line-height: 1.6;
+
+    white-space: pre-line;
+}
+
+.public-sale-contact {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 10px 18px;
+
+    background: #ff7000;
+    color: #fff;
+
+    border-radius: 5px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease;
+}
+
+.public-sale-contact:hover {
+    background: #ff8a1c;
+}
+
+
+/* ---------- AUCUNE VENTE ---------- */
+
+.no-sales {
+    grid-column: 1 / -1;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #888;
+
+    border: 1px solid #292929;
+    border-radius: 8px;
+
+    background: #111;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+
+    .sales-public-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .sales-section {
+        padding: 70px 5%;
+    }
+
+    .sales-public-list {
+        grid-template-columns: 1fr;
+    }
+
+    .public-sale-gallery img {
+        height: 210px;
+    }
+
+}
