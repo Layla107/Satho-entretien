@@ -900,7 +900,7 @@
                         } =
                             await supabaseClient
                                 .storage
-                                .from("Ventes")
+                                .from("vente")
                                 .upload(
                                     fileName,
                                     file,
@@ -1265,7 +1265,7 @@
                     } =
                         await supabaseClient
                             .storage
-                            .from("Ventes")
+                            .from("vente")
                             .remove(
                                 paths
                             );
