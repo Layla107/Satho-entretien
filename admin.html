@@ -900,7 +900,7 @@
                         } =
                             await supabaseClient
                                 .storage
-                                .from("ventes")
+                                .from("Ventes")
                                 .upload(
                                     fileName,
                                     file,
@@ -923,7 +923,7 @@
                         } =
                             supabaseClient
                                 .storage
-                                .from("ventes")
+                                .from("Ventes")
                                 .getPublicUrl(
                                     fileName
                                 );
@@ -947,7 +947,7 @@
 
                                 description: description,
 
-                                photos:
+                                photo:
                                     JSON.stringify(
                                         photoUrls
                                     )
@@ -1065,7 +1065,7 @@
 
                     const photos =
                         JSON.parse(
-                            sale.photos || "[]"
+                            sale.photo || "[]"
                         );
 
 
@@ -1213,7 +1213,7 @@
 
                 const photos =
                     JSON.parse(
-                        sale.photos || "[]"
+                        sale.photo || "[]"
                     );
 
 
@@ -1228,7 +1228,7 @@
                             function(url) {
 
                                 const marker =
-                                    "/storage/v1/object/public/ventes/";
+                                    "/storage/v1/object/public/Ventes/";
 
                                 const index =
                                     url.indexOf(
@@ -1265,7 +1265,7 @@
                     } =
                         await supabaseClient
                             .storage
-                            .from("ventes")
+                            .from("Ventes")
                             .remove(
                                 paths
                             );
