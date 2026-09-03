@@ -2956,3 +2956,31 @@ a {
         none !important;
 
 }
+/* Correction texte sous "Matériel disponible" */
+
+.sales-section .section-title span {
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    color: var(--grey);
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    letter-spacing: 0;
+
+    text-transform: none;
+
+    background: none;
+
+}
