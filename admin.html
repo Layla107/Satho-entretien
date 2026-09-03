@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Administration | Satho Entretien</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #080808;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        .admin-header {
+            min-height: 70px;
+            padding: 12px 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: #111111;
+            border-bottom: 2px solid #ff7000;
+        }
+
+        .admin-header img {
+            width: 100px;
+            height: auto;
+        }
+
+        .logout-button {
+            padding: 9px 16px;
+
+            border: 1px solid #444;
+            border-radius: 5px;
+
+            background: transparent;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .logout-button:hover {
+            background: #ff7000;
+            border-color: #ff7000;
+        }
+
+        .admin-container {
+            width: min(1100px, 90%);
+            margin: 50px auto;
+        }
+
+        .admin-title {
+            margin-bottom: 35px;
+        }
+
+        .admin-title p {
+            margin-bottom: 5px;
+
+            color: #ff7000;
+
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .admin-title h1 {
+            font-size: 38px;
+        }
+
+        .admin-card {
+            margin-bottom: 30px;
+            padding: 30px;
+
+            background: #111111;
+            border: 1px solid #292929;
+            border-radius: 8px;
+        }
+
+        .admin-card h2 {
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+
+            border: 1px solid #383838;
+            border-radius: 5px;
+
+            background: #191919;
+            color: white;
+
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff7000;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .photos-input {
+            padding: 10px;
+        }
+
+        .photo-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+
+            margin-top: 15px;
+        }
+
+        .photo-preview img {
+            width: 100%;
+            height: 120px;
+
+            object-fit: cover;
+
+            border-radius: 5px;
+            border: 1px solid #333;
+        }
+
+        .primary-button {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            border: none;
+            border-radius: 5px;
+
+            background: #ff7000;
+            color: white;
+
+            font-weight: 800;
+
+            cursor: pointer;
+        }
+
+        .primary-button:hover {
+            background: #ff8a1c;
+        }
+
+        .primary-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .secondary-button {
+            padding: 10px 18px;
+
+            border: 1px solid #444;
+            border-radius: 5px;
+
+            background: transparent;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .secondary-button:hover {
+            border-color: #ff7000;
+            color: #ff7000;
+        }
+
+        .sales-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .sale-card {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+
+            gap: 25px;
+
+            padding: 20px;
+
+            background: #191919;
+            border: 1px solid #292929;
+            border-radius: 7px;
+        }
+
+        .sale-photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 7px;
+        }
+
+        .sale-photos img {
+            width: 100%;
+            height: 95px;
+
+            object-fit: cover;
+
+            border-radius: 4px;
+        }
+
+        .sale-info h3 {
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+
+        .sale-info p {
+            margin-bottom: 15px;
+            color: #bdbdbd;
+            white-space: pre-line;
+        }
+
+        .sale-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .delete-button {
+            padding: 9px 15px;
+
+            border: 1px solid #772222;
+            border-radius: 5px;
+
+            background: transparent;
+            color: #ff7777;
+
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background: #772222;
+            color: white;
+        }
+
+        .message {
+            display: none;
+
+            margin-bottom: 20px;
+            padding: 12px 15px;
+
+            border-radius: 5px;
+
+            background: #191919;
+            border: 1px solid #333;
+        }
+
+        .login-screen {
+            width: min(450px, 90%);
+            margin: 100px auto;
+        }
+
+        .login-screen img {
+            display: block;
+
+            width: 130px;
+
+            margin: 0 auto 35px;
+        }
+
+        .login-screen h1 {
+            margin-bottom: 25px;
+
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .login-error {
+            display: none;
+
+            margin-top: 15px;
+
+            color: #ff7777;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 700px) {
+
+            .admin-container {
+                width: 92%;
+                margin: 30px auto;
+            }
+
+            .admin-card {
+                padding: 20px;
+            }
+
+            .admin-title h1 {
+                font-size: 30px;
+            }
+
+            .sale-card {
+                grid-template-columns: 1fr;
+            }
+
+            .sale-photos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         CONNEXION
+    ================================================== -->
+
+    <section
+        class="login-screen"
+        id="loginScreen"
+    >
+
+        <img
+            src="logo.png"
+            alt="Satho Entretien"
+        >
+
+        <h1>
+            Espace administration
+        </h1>
+
+
+        <div class="admin-card">
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Adresse e-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Mot de passe
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Se connecter
+                </button>
+
+
+                <p
+                    class="login-error"
+                    id="loginError"
+                >
+                    Adresse e-mail ou mot de passe incorrect.
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         ADMINISTRATION
+    ================================================== -->
+
+    <div
+        id="adminApp"
+        class="hidden"
+    >
+
+        <header class="admin-header">
+
+            <a href="index.html">
+
+                <img
+                    src="logo.png"
+                    alt="Satho Entretien"
+                >
+
+            </a>
+
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+                Se déconnecter
+            </button>
+
+        </header>
+
+
+        <main class="admin-container">
+
+
+            <div class="admin-title">
+
+                <p>
+                    ESPACE PRIVÉ
+                </p>
+
+                <h1>
+                    Gestion des ventes
+                </h1>
+
+            </div>
+
+
+            <div
+                class="message"
+                id="message"
+            ></div>
+
+
+            <!-- ================= AJOUT ================= -->
+
+            <section class="admin-card">
+
+                <h2>
+                    Ajouter une machine
+                </h2>
+
+
+                <form id="saleForm">
+
+
+                    <div class="form-group">
+
+                        <label for="saleName">
+                            Nom du matériel
+                        </label>
+
+                        <input
+                            type="text"
+                            id="saleName"
+                            placeholder="Ex. Tondeuse professionnelle"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="saleDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="saleDescription"
+                            placeholder="Décrivez brièvement le matériel..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="salePhotos">
+                            Photos
+                        </label>
+
+                        <input
+                            type="file"
+                            id="salePhotos"
+                            class="photos-input"
+                            accept="image/*"
+                            multiple
+                            required
+                        >
+
+                        <div
+                            class="photo-preview"
+                            id="photoPreview"
+                        ></div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="publishButton"
+                    >
+                        Publier la vente
+                    </button>
+
+
+                </form>
+
+            </section>
+
+
+
+            <!-- ================= VENTES ================= -->
+
+            <section class="admin-card">
+
+                <h2>
+                    Ventes actuellement publiées
+                </h2>
+
+                <div
+                    class="sales-list"
+                    id="salesList"
+                >
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         SUPABASE
+    ================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <script>
+
+        /* ==================================================
+           CONFIGURATION SUPABASE
+        ================================================== */
+
+
+        const SUPABASE_URL =
+            "https://wdmsfxdwbfbwjdsdffbi.supabase.co";
+
+
+        const SUPABASE_PUBLISHABLE_KEY =
+            "sb_publishable_YBEzNqdDQB6I5i4l3sx1Ng_mc1my_18";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_PUBLISHABLE_KEY
+            );
+
+
+
+        /* ==================================================
+           ELEMENTS
+        ================================================== */
+
+        const loginScreen =
+            document.getElementById("loginScreen");
+
+        const adminApp =
+            document.getElementById("adminApp");
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginError =
+            document.getElementById("loginError");
+
+        const logoutButton =
+            document.getElementById("logoutButton");
+
+        const saleForm =
+            document.getElementById("saleForm");
+
+        const salePhotos =
+            document.getElementById("salePhotos");
+
+        const photoPreview =
+            document.getElementById("photoPreview");
+
+        const salesList =
+            document.getElementById("salesList");
+
+        const publishButton =
+            document.getElementById("publishButton");
+
+        const message =
+            document.getElementById("message");
+
+
+
+        /* ==================================================
+           AFFICHAGE
+        ================================================== */
+
+        function showAdmin() {
+
+            loginScreen.classList.add("hidden");
+
+            adminApp.classList.remove("hidden");
+
+            loadSales();
+
+        }
+
+
+        function showLogin() {
+
+            adminApp.classList.add("hidden");
+
+            loginScreen.classList.remove("hidden");
+
+        }
+
+
+        function showMessage(text) {
+
+            message.textContent = text;
+
+            message.style.display = "block";
+
+            setTimeout(() => {
+
+                message.style.display = "none";
+
+            }, 4000);
+
+        }
+
+
+
+        /* ==================================================
+           VERIFIER LA SESSION
+        ================================================== */
+
+        async function checkSession() {
+
+            const {
+                data: {
+                    session
+                }
+            } = await supabaseClient.auth.getSession();
+
+
+            if (session) {
+
+                showAdmin();
+
+            } else {
+
+                showLogin();
+
+            }
+
+        }
+
+
+
+        /* ==================================================
+           CONNEXION
+        ================================================== */
+
+        loginForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+                loginError.style.display = "none";
+
+
+                const email =
+                    document.getElementById(
+                        "loginEmail"
+                    ).value.trim();
+
+
+                const password =
+                    document.getElementById(
+                        "loginPassword"
+                    ).value;
+
+
+                const {
+                    error
+                } =
+                    await supabaseClient.auth.signInWithPassword({
+
+                        email: email,
+
+                        password: password
+
+                    });
+
+
+                if (error) {
+
+                    loginError.style.display = "block";
+
+                    return;
+
+                }
+
+
+                loginForm.reset();
+
+                showAdmin();
+
+            }
+        );
+
+
+
+        /* ==================================================
+           DECONNEXION
+        ================================================== */
+
+        logoutButton.addEventListener(
+            "click",
+            async function() {
+
+                await supabaseClient.auth.signOut();
+
+                showLogin();
+
+            }
+        );
+
+
+
+        /* ==================================================
+           PREVISUALISATION PHOTOS
+        ================================================== */
+
+        salePhotos.addEventListener(
+            "change",
+            function() {
+
+                photoPreview.innerHTML = "";
+
+
+                Array.from(
+                    salePhotos.files
+                ).forEach(
+                    function(file) {
+
+                        const image =
+                            document.createElement("img");
+
+                        image.src =
+                            URL.createObjectURL(file);
+
+                        photoPreview.appendChild(image);
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* ==================================================
+           AJOUTER UNE VENTE
+        ================================================== */
+
+        saleForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                publishButton.disabled = true;
+
+                publishButton.textContent =
+                    "Publication en cours...";
+
+
+                try {
+
+                    const name =
+                        document.getElementById(
+                            "saleName"
+                        ).value.trim();
+
+
+                    const description =
+                        document.getElementById(
+                            "saleDescription"
+                        ).value.trim();
+
+
+                    const files =
+                        Array.from(
+                            salePhotos.files
+                        );
+
+
+                    if (!files.length) {
+
+                        throw new Error(
+                            "Ajoute au moins une photo."
+                        );
+
+                    }
+
+
+                    const photoUrls = [];
+
+
+                    /*
+                       On crée un dossier unique
+                       pour chaque vente.
+                    */
+
+                    const folder =
+                        Date.now().toString();
+
+
+                    for (
+                        const file of files
+                    ) {
+
+                        const extension =
+                            file.name
+                                .split(".")
+                                .pop()
+                                .toLowerCase();
+
+
+                        const fileName =
+                            `${folder}/${crypto.randomUUID()}.${extension}`;
+
+
+                        const {
+                            error: uploadError
+                        } =
+                            await supabaseClient
+                                .storage
+                                .from("ventes")
+                                .upload(
+                                    fileName,
+                                    file,
+                                    {
+                                        cacheControl: "3600",
+                                        upsert: false
+                                    }
+                                );
+
+
+                        if (uploadError) {
+
+                            throw uploadError;
+
+                        }
+
+
+                        const {
+                            data
+                        } =
+                            supabaseClient
+                                .storage
+                                .from("ventes")
+                                .getPublicUrl(
+                                    fileName
+                                );
+
+
+                        photoUrls.push(
+                            data.publicUrl
+                        );
+
+                    }
+
+
+                    const {
+                        error: insertError
+                    } =
+                        await supabaseClient
+                            .from("ventes")
+                            .insert({
+
+                                nom: name,
+
+                                description: description,
+
+                                photos:
+                                    JSON.stringify(
+                                        photoUrls
+                                    )
+
+                            });
+
+
+                    if (insertError) {
+
+                        throw insertError;
+
+                    }
+
+
+                    saleForm.reset();
+
+                    photoPreview.innerHTML = "";
+
+
+                    showMessage(
+                        "La vente a bien été publiée."
+                    );
+
+
+                    await loadSales();
+
+                }
+
+                catch (error) {
+
+                    console.error(error);
+
+                    showMessage(
+                        "Une erreur est survenue : " +
+                        error.message
+                    );
+
+                }
+
+                finally {
+
+                    publishButton.disabled = false;
+
+                    publishButton.textContent =
+                        "Publier la vente";
+
+                }
+
+            }
+        );
+
+
+
+        /* ==================================================
+           CHARGER LES VENTES
+        ================================================== */
+
+        async function loadSales() {
+
+            salesList.innerHTML =
+                "<p>Chargement...</p>";
+
+
+            const {
+                data,
+                error
+            } =
+                await supabaseClient
+                    .from("ventes")
+                    .select("*")
+                    .order(
+                        "created_at",
+                        {
+                            ascending: false
+                        }
+                    );
+
+
+            if (error) {
+
+                salesList.innerHTML =
+                    "<p>Impossible de charger les ventes.</p>";
+
+                console.error(error);
+
+                return;
+
+            }
+
+
+            if (!data.length) {
+
+                salesList.innerHTML =
+                    "<p>Aucune vente publiée pour le moment.</p>";
+
+                return;
+
+            }
+
+
+            salesList.innerHTML = "";
+
+
+            data.forEach(
+                function(sale) {
+
+                    const card =
+                        document.createElement(
+                            "article"
+                        );
+
+                    card.className =
+                        "sale-card";
+
+
+                    const photos =
+                        JSON.parse(
+                            sale.photos || "[]"
+                        );
+
+
+                    const photosContainer =
+                        document.createElement(
+                            "div"
+                        );
+
+                    photosContainer.className =
+                        "sale-photos";
+
+
+                    photos.forEach(
+                        function(url) {
+
+                            const image =
+                                document.createElement(
+                                    "img"
+                                );
+
+                            image.src = url;
+
+                            image.alt =
+                                sale.nom;
+
+                            photosContainer.appendChild(
+                                image
+                            );
+
+                        }
+                    );
+
+
+                    const info =
+                        document.createElement(
+                            "div"
+                        );
+
+                    info.className =
+                        "sale-info";
+
+
+                    const title =
+                        document.createElement(
+                            "h3"
+                        );
+
+                    title.textContent =
+                        sale.nom;
+
+
+                    const description =
+                        document.createElement(
+                            "p"
+                        );
+
+                    description.textContent =
+                        sale.description || "";
+
+
+                    const actions =
+                        document.createElement(
+                            "div"
+                        );
+
+                    actions.className =
+                        "sale-actions";
+
+
+                    const deleteButton =
+                        document.createElement(
+                            "button"
+                        );
+
+                    deleteButton.type =
+                        "button";
+
+                    deleteButton.className =
+                        "delete-button";
+
+                    deleteButton.textContent =
+                        "Supprimer";
+
+
+                    deleteButton.addEventListener(
+                        "click",
+                        function() {
+
+                            deleteSale(
+                                sale
+                            );
+
+                        }
+                    );
+
+
+                    actions.appendChild(
+                        deleteButton
+                    );
+
+
+                    info.appendChild(title);
+
+                    info.appendChild(description);
+
+                    info.appendChild(actions);
+
+
+                    card.appendChild(
+                        photosContainer
+                    );
+
+                    card.appendChild(info);
+
+
+                    salesList.appendChild(card);
+
+                }
+            );
+
+        }
+
+
+
+        /* ==================================================
+           SUPPRIMER UNE VENTE
+        ================================================== */
+
+        async function deleteSale(sale) {
+
+            const confirmed =
+                confirm(
+                    "Supprimer cette vente ?"
+                );
+
+
+            if (!confirmed) {
+
+                return;
+
+            }
+
+
+            try {
+
+                const photos =
+                    JSON.parse(
+                        sale.photos || "[]"
+                    );
+
+
+                /*
+                   On récupère les chemins des
+                   fichiers dans le bucket.
+                */
+
+                const paths =
+                    photos
+                        .map(
+                            function(url) {
+
+                                const marker =
+                                    "/storage/v1/object/public/ventes/";
+
+                                const index =
+                                    url.indexOf(
+                                        marker
+                                    );
+
+
+                                if (
+                                    index === -1
+                                ) {
+
+                                    return null;
+
+                                }
+
+
+                                return decodeURIComponent(
+                                    url.substring(
+                                        index +
+                                        marker.length
+                                    )
+                                );
+
+                            }
+                        )
+                        .filter(Boolean);
+
+
+                if (paths.length) {
+
+                    const {
+                        error:
+                            storageError
+                    } =
+                        await supabaseClient
+                            .storage
+                            .from("ventes")
+                            .remove(
+                                paths
+                            );
+
+
+                    if (storageError) {
+
+                        console.error(
+                            storageError
+                        );
+
+                    }
+
+                }
+
+
+                const {
+                    error
+                } =
+                    await supabaseClient
+                        .from("ventes")
+                        .delete()
+                        .eq(
+                            "id",
+                            sale.id
+                        );
+
+
+                if (error) {
+
+                    throw error;
+
+                }
+
+
+                showMessage(
+                    "La vente a été supprimée."
+                );
+
+
+                await loadSales();
+
+            }
+
+            catch (error) {
+
+                console.error(error);
+
+                showMessage(
+                    "Impossible de supprimer la vente : " +
+                    error.message
+                );
+
+            }
+
+        }
+
+
+
+        /* ==================================================
+           DEMARRAGE
+        ================================================== */
+
+        checkSession();
+
+
+    </script>
+
+
+</body>
+
+</html>
