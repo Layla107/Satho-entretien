@@ -900,7 +900,7 @@
                         } =
                             await supabaseClient
                                 .storage
-                                .from("vente")
+                                .from("ventes")
                                 .upload(
                                     fileName,
                                     file,
@@ -1228,7 +1228,7 @@
                             function(url) {
 
                                 const marker =
-                                    "/storage/v1/object/public/Ventes/";
+                                    "/storage/v1/object/public/ventes/";
 
                                 const index =
                                     url.indexOf(
