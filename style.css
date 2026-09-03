@@ -2457,3 +2457,75 @@ a {
     }
 
 }
+
+/* ================= CORRECTION VENTES ================= */
+
+.sales-section {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+}
+
+.sales-section .section-title {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.sales-section .section-title p,
+.sales-section .section-title h2,
+.sales-section .section-title span {
+    position: static;
+    display: block;
+    height: auto;
+    margin: 0;
+}
+
+.sales-section .section-title p {
+    margin-bottom: 8px;
+}
+
+.sales-section .section-title h2 {
+    margin-bottom: 12px;
+}
+
+.sales-section .section-title span {
+    line-height: 1.6;
+}
+
+.sales-public-list {
+    position: relative;
+    clear: both;
+}
+
+
+/* ---------- TELEPHONE ---------- */
+
+@media (max-width: 600px) {
+
+    .sales-section .section-title {
+        margin-bottom: 30px;
+    }
+
+    .sales-section .section-title p,
+    .sales-section .section-title h2,
+    .sales-section .section-title span {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .sales-section .section-title h2 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .sales-section .section-title span {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+}
