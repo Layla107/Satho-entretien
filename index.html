@@ -1334,6 +1334,218 @@ if (
     );
 
 }
+
+        /* ---------- VENTES SUPABASE ---------- */
+
+const SUPABASE_URL =
+    "https://wdmsfxdwbfbwjdsdffbi.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_YBEzNqdDQB6I5i4l3sx1Ng_mc1my_18";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+const publicSalesList =
+    document.getElementById(
+        "publicSalesList"
+    );
+
+
+async function loadPublicSales() {
+
+    if (!publicSalesList) {
+        return;
+    }
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("ventes")
+            .select("*")
+            .order(
+                "created_at",
+                {
+                    ascending: false
+                }
+            );
+
+
+    if (error) {
+
+        console.error(
+            "Erreur Supabase :",
+            error
+        );
+
+        publicSalesList.innerHTML =
+            '<p class="no-sales">Les ventes sont temporairement indisponibles.</p>';
+
+        return;
+
+    }
+
+
+    if (!data || data.length === 0) {
+
+        publicSalesList.innerHTML =
+            '<p class="no-sales">Aucun matériel disponible à la vente pour le moment.</p>';
+
+        return;
+
+    }
+
+
+    publicSalesList.innerHTML = "";
+
+
+    data.forEach(
+        function(sale) {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+            card.className =
+                "public-sale-card";
+
+
+            const gallery =
+                document.createElement(
+                    "div"
+                );
+
+            gallery.className =
+                "public-sale-gallery";
+
+
+            let photos = [];
+
+            try {
+
+                photos =
+                    JSON.parse(
+                        sale.photos || "[]"
+                    );
+
+            } catch (error) {
+
+                photos = [];
+
+            }
+
+
+            photos.forEach(
+                function(url) {
+
+                    const image =
+                        document.createElement(
+                            "img"
+                        );
+
+                    image.src = url;
+
+                    image.alt =
+                        sale.nom ||
+                        "Matériel à vendre";
+
+                    image.loading =
+                        "lazy";
+
+                    gallery.appendChild(
+                        image
+                    );
+
+                }
+            );
+
+
+            const content =
+                document.createElement(
+                    "div"
+                );
+
+            content.className =
+                "public-sale-content";
+
+
+            const title =
+                document.createElement(
+                    "h3"
+                );
+
+            title.textContent =
+                sale.nom ||
+                "Matériel à vendre";
+
+
+            const description =
+                document.createElement(
+                    "p"
+                );
+
+            description.textContent =
+                sale.description ||
+                "";
+
+
+            const contact =
+                document.createElement(
+                    "a"
+                );
+
+            contact.className =
+                "public-sale-contact";
+
+            contact.href =
+                "#contact";
+
+            contact.textContent =
+                "Nous contacter";
+
+
+            content.appendChild(
+                title
+            );
+
+            content.appendChild(
+                description
+            );
+
+            content.appendChild(
+                contact
+            );
+
+
+            card.appendChild(
+                gallery
+            );
+
+            card.appendChild(
+                content
+            );
+
+
+            publicSalesList.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+loadPublicSales();
         
     </script>
 
