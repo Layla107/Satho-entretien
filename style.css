@@ -2458,33 +2458,23 @@ a {
 
 }
 
-/* ================= CORRECTION VENTES ================= */
+/* ================= VENTES ================= */
 
 .sales-section {
-    position: relative;
-    clear: both;
-    overflow: hidden;
+    padding: 90px 5%;
+    background: #fff;
 }
 
 .sales-section .section-title {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 40px;
-}
-
-.sales-section .section-title p,
-.sales-section .section-title h2,
-.sales-section .section-title span {
-    position: static;
-    display: block;
-    height: auto;
-    margin: 0;
+    text-align: center;
+    margin-bottom: 45px;
 }
 
 .sales-section .section-title p {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 .sales-section .section-title h2 {
@@ -2492,40 +2482,123 @@ a {
 }
 
 .sales-section .section-title span {
+    display: block;
+    max-width: 650px;
+    margin: 0 auto;
     line-height: 1.6;
 }
 
 .sales-public-list {
-    position: relative;
-    clear: both;
+    width: min(1100px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.sales-loading,
+.no-sales {
+    grid-column: 1 / -1;
+
+    text-align: center;
+    padding: 20px;
+
+    line-height: 1.6;
 }
 
 
-/* ---------- TELEPHONE ---------- */
+/* CARTES */
+
+.public-sale-card {
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.public-sale-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+
+    background: #eee;
+}
+
+.public-sale-gallery img {
+    display: block;
+
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+}
+
+.public-sale-content {
+    padding: 22px;
+}
+
+.public-sale-content h3 {
+    margin-bottom: 10px;
+
+    font-size: 21px;
+}
+
+.public-sale-content p {
+    margin: 0;
+
+    line-height: 1.6;
+}
+
+.public-sale-contact {
+    display: inline-block;
+
+    margin-top: 18px;
+    padding: 10px 18px;
+
+    background: #ff7000;
+    color: #fff;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.public-sale-contact:hover {
+    opacity: 0.9;
+}
+
+
+/* TABLETTE */
+
+@media (max-width: 900px) {
+
+    .sales-public-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* TELEPHONE */
 
 @media (max-width: 600px) {
 
-    .sales-section .section-title {
-        margin-bottom: 30px;
+    .sales-section {
+        padding: 70px 5%;
     }
 
-    .sales-section .section-title p,
-    .sales-section .section-title h2,
-    .sales-section .section-title span {
-        position: static;
-        display: block;
-        width: 100%;
-        height: auto;
+    .sales-public-list {
+        grid-template-columns: 1fr;
     }
 
-    .sales-section .section-title h2 {
-        font-size: 30px;
-        line-height: 1.2;
-    }
-
-    .sales-section .section-title span {
-        font-size: 15px;
-        line-height: 1.6;
+    .public-sale-gallery img {
+        height: 210px;
     }
 
 }
