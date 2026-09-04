@@ -2570,7 +2570,7 @@ a {
         100%;
 
     object-fit:
-        cover;
+        contain;
 
     display:
         block;
@@ -2588,15 +2588,6 @@ a {
 
     display:
         none;
-
-}
-
-
-.public-sale-card:hover
-.public-sale-gallery img:first-child {
-
-    transform:
-        scale(1.04);
 
 }
 
